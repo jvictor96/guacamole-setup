@@ -1,11 +1,11 @@
-FROM ubuntu
+FROM debian:bullseye
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install XFCE + VNC + Java + Tomcat + guacd deps
 RUN apt update && apt install -y \
   xfce4 xrdp xorg openjdk-11-jdk wget \
-  tomcat11 guacd libguac-client-* && \
+  tomcat9 guacd libguac-client-* && \
   apt clean
 
 # Setup JAVA and Tomcat environment
