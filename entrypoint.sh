@@ -12,6 +12,7 @@ fi
 
 service guacd start &
 service xrdp start &
+service lightdm start
 
 sleep 2
 
@@ -26,5 +27,6 @@ su - marlene -c '
   x11vnc -display :1 -nopw -forever -shared &
 '
 
-
 $CATALINA_HOME/bin/catalina.sh run
+
+su jvictor

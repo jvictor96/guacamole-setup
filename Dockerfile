@@ -21,6 +21,9 @@ RUN apt install -y fonts-dejavu gtk2-engines xfce4-terminal xfce4-panel xfce4-se
 RUN wget https://downloads.apache.org/guacamole/1.5.3/binary/guacamole-1.5.3.war \
     -O /var/lib/tomcat9/webapps/guacamole.war && file /var/lib/tomcat9/webapps/guacamole.war
 
+
+RUN apt install -y lightdm
+
 # Expose necessary ports
 EXPOSE 3389 5900 8080
 
@@ -29,6 +32,8 @@ RUN mkdir /etc/guacamole
 ADD guacamole.properties /etc/guacamole/guacamole.properties
 ADD user-mapping.xml /etc/guacamole/user-mapping.xml
 ADD entrypoint.sh entrypoint.sh
+	
+RUN useradd -ms /bin/bash jvictor
 
 # Start all services
 CMD ./entrypoint.sh
