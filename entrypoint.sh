@@ -8,11 +8,11 @@ SCREEN_SIZE="1024x768x16"
 if ! id "$USER_NAME" &>/dev/null; then
   useradd -m -s /bin/bash "$USER_NAME"
   echo "$USER_NAME:senha123" | chpasswd
+  echo "marlene ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 fi
 
 service guacd start &
-service xrdp start &
-service lightdm start
+service xrdp start 
 
 sleep 2
 
