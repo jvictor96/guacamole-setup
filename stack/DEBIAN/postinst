@@ -1,0 +1,11 @@
+#!/bin/bash
+
+TOMCAT_DIR="/opt/tomcat9"
+mkdir -p "$TOMCAT_DIR"
+wget -O "/tmp/apache-tomcat-9.0.106.tar.gz" https://github.com/jvictor96/guacamole-setup/releases/download/beta/apache-tomcat-9.0.106.tar.gz
+tar -xzf /tmp/apache-tomcat-9.0.106.tar.gz -C "$TOMCAT_DIR" --strip-components=1
+rm -r /tmp/apache-tomcat-9.0.106.tar.gz
+wget -O $TOMCAT_DIR/webapps/guacamole.war https://github.com/jvictor96/guacamole-setup/releases/download/beta/guacamole.war 
+
+wget -O /opt/firefox https://github.com/jvictor96/guacamole-setup/releases/download/beta/firefox.AppImage
+chmod +x /opt/firefox

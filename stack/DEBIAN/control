@@ -1,0 +1,6 @@
+Package: virtual-gui-stack
+Version: 1.0
+Architecture: all
+Maintainer: José Victor <jvictor96@gmail.com>
+Depends: openjdk-11-jdk, xfce4, xrdp, xorg, guacd, xvfb, x11vnc, xfce4-terminal, dbus-x11
+Description: Stack gráfica com XFCE, VNC, Guacamole, Tomcat e charme.

@@ -1,0 +1,13 @@
+[Unit]
+Description=Marlo GUI Stack via script
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+ExecStart=/opt/start-gui-stack.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
